@@ -81,6 +81,18 @@ DEFAULT = RESET
 
 ---
 
+## 🌍 Environment Variable: `BEAUTILOG_CONFIG_PATH`
+
+By default, Beautilog looks for `beautilog.ini` in the current working directory. If you need to keep your config elsewhere (e.g. co-located with your project while running from a different directory), set the `BEAUTILOG_CONFIG_PATH` environment variable:
+
+```bash
+export BEAUTILOG_CONFIG_PATH=/path/to/your/beautilog.ini
+```
+
+When set, Beautilog will use that path instead of the cwd lookup. If the file doesn't exist yet, it will be auto-created from the package default. Relative paths in the INI (like `log_file_path`) are anchored to the INI's directory, so logs land next to your config regardless of where the process starts.
+
+---
+
 ## 🚀 Example Usage
 
 ```python
